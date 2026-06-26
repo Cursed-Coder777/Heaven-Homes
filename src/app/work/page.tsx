@@ -1,10 +1,12 @@
+import { StickyCard } from "~/components/sticky-card";
+
 const PROPERTIES = [
-  { title: "Villa Serenity", location: "Amalfi Coast, Italy", image: "/hero-images/1.webp" },
-  { title: "Penthouse Nocturne", location: "Manhattan, USA", image: "/hero-images/2.webp" },
-  { title: "Casa Verde", location: "Tuscany, Italy", image: "/hero-images/3.webp" },
-  { title: "Azure Residence", location: "Saint-Tropez, France", image: "/hero-images/4.webp" },
-  { title: "The Ridge Estate", location: "Aspen, USA", image: "/hero-images/5.webp" },
-  { title: "Palm Pavilion", location: "Dubai, UAE", image: "/hero-images/6.webp" },
+  { id: 1, alt: "Villa Serenity - Amalfi Coast, Italy", image: "/hero-images/1.webp" },
+  { id: 2, alt: "Penthouse Nocturne - Manhattan, USA", image: "/hero-images/2.webp" },
+  { id: 3, alt: "Casa Verde - Tuscany, Italy", image: "/hero-images/3.webp" },
+  { id: 4, alt: "Azure Residence - Saint-Tropez, France", image: "/hero-images/4.webp" },
+  { id: 5, alt: "The Ridge Estate - Aspen, USA", image: "/hero-images/5.webp" },
+  { id: 6, alt: "Palm Pavilion - Dubai, UAE", image: "/hero-images/6.webp" },
 ];
 
 export default function WorkPage() {
@@ -21,31 +23,11 @@ export default function WorkPage() {
             <span className="text-white/30">estates</span>
           </h1>
         </div>
+      </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROPERTIES.map((property) => (
-            <div
-              key={property.title}
-              className="group relative aspect-[4/5] cursor-pointer overflow-hidden"
-            >
-              <img
-                src={property.image}
-                alt={property.title}
-                className="h-full w-full object-cover brightness-[0.7] transition-all duration-700 group-hover:scale-105 group-hover:brightness-100"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 p-6">
-                <h3 className="text-xl font-light tracking-tight">
-                  {property.title}
-                </h3>
-                <p className="mt-1 text-sm tracking-[0.15em] text-white/50 uppercase">
-                  {property.location}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <StickyCard cards={PROPERTIES} />
 
+      <div className="mx-auto max-w-6xl">
         <div className="mt-32 border-t border-white/10 pt-32 text-center">
           <h2 className="mb-6 text-3xl font-light tracking-tight sm:text-5xl">
             Inquire about <span className="text-white/30">a property</span>
