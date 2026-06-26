@@ -67,6 +67,7 @@ export default function HeroScrollSection() {
 
     const width = window.innerWidth;
     const height = window.innerHeight;
+    const isPortrait = height > width;
     const vbWidth = 100;
     const vbHeight = (height / width) * 100;
     const h = vbHeight / BLIND_COUNT;
@@ -84,7 +85,11 @@ export default function HeroScrollSection() {
 
       const img = svg.querySelector("image");
       if (img) {
-        img.setAttribute("width", String(vbWidth));
+        // On portrait screens the viewBox is tall (e.g. 100×216). Setting the
+        // image to those dimensions forces xMidYMid slice to crop the
+        // landscape photo into a thin vertical strip. Instead, use a square
+        // area (vbHeight×vbHeight) so slice shows far more horizontal content.
+        img.setAttribute("width", String(isPortrait ? vbHeight : vbWidth));
         img.setAttribute("height", String(vbHeight));
       }
 
