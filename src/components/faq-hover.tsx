@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 
 const FAQS = [
@@ -92,11 +93,12 @@ export default function FaqHover() {
           key={i}
           className="faq-item relative w-full border-b border-white/10 px-8 py-10"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             className="faq-image pointer-events-none invisible fixed top-0 left-0 z-50 h-[350px] w-[350px] object-cover opacity-0"
             src={faq.img}
             alt=""
+            width={350}
+            height={350}
           />
           <div className="text">
             <h3 className="text-lg leading-snug font-light tracking-tight">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -64,7 +65,7 @@ export default function TelescopeZoomSection() {
       wrapper,
       { width: 0, height: 0 },
       {
-        width: "100vw",
+        width: "80vw",
         height: "80vh",
         duration: 1,
         ease: "power1.inOut",
@@ -96,10 +97,12 @@ export default function TelescopeZoomSection() {
         style={{ perspective: "100vh" }}
       >
         {SMALL_IMAGES.map((img, i) => (
-          <img
+          <Image
             key={i}
             src={img.src}
             alt=""
+            width={200}
+            height={267}
             className="absolute w-[10vw] object-cover max-sm:w-[20vw]"
             style={{
               top: img.top,
@@ -125,13 +128,15 @@ export default function TelescopeZoomSection() {
           </span>
           <span
             ref={mainImgWrapperRef}
-            className="inline-block overflow-hidden"
+            className="inline-block shrink-0 overflow-hidden"
             style={{ lineHeight: 0, fontSize: 0 }}
           >
-            <img
+            <Image
               ref={mainImgRef}
               src="/hero-images/3.webp"
               alt=""
+              width={1920}
+              height={1080}
               className="block h-full w-full object-cover"
             />
           </span>
