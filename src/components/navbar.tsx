@@ -57,15 +57,6 @@ export default function Navbar() {
           />
         </button>
 
-        {/* Desktop right side */}
-        <Link
-          href="https://github.com/Hiro-kiii/Scroll-Transition/"
-          className={`pointer-events-auto hidden underline-offset-2 hover:text-white hover:underline md:inline ${
-            pathname === "/github" ? "text-white underline" : ""
-          }`}
-        >
-          GitHub
-        </Link>
       </header>
 
       {/* Mobile menu overlay */}
@@ -90,13 +81,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="https://github.com/Hiro-kiii/Scroll-Transition/"
-            className="hover:text-white hover:underline"
-            onClick={() => setIsOpen(false)}
-          >
-            GitHub
-          </Link>
         </nav>
       </div>
     </>
