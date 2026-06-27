@@ -1,0 +1,198 @@
+/* ============================================================
+   Footer — Premium section
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #060606;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+/* ---- Content ---- */
+.content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 48px 60px;
+}
+
+/* ---- Top row: logo + tagline ---- */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brandName {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.brandTagline {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.35);
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+.tagline {
+  text-align: right;
+  max-width: 320px;
+}
+
+.taglineLine {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* ---- Grid: 3 columns ---- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 80px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.colLabel {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+}
+
+.colItem {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 6px 0;
+  cursor: default;
+  transition: color 0.25s ease, transform 0.25s ease;
+  will-change: transform, opacity;
+}
+
+.colItem:hover {
+  color: rgba(255, 255, 255, 0.85);
+  transform: translateX(4px);
+}
+
+/* ---- Bottom bar ---- */
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.copyright {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.socials {
+  display: flex;
+  gap: 24px;
+}
+
+.socialLink {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.socialLink:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .content {
+    padding: 60px 32px 40px;
+  }
+
+  .grid {
+    gap: 32px;
+  }
+
+  .topRow {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  .tagline {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 24px;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 40px 20px 30px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .colItem {
+    font-size: 13px;
+  }
+}
